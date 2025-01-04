@@ -39,4 +39,18 @@ Companies:
 0 - 6 months
 Goldman Sachs
 
+//python code
+
+class Solution:
+    def stringShift(self, s: str, shift: List[List[int]]) -> str:
+        
+        for i in range(len(shift)):
+            stride=shift[i][1]  % len(s) 
+            if shift[i][0] == 0:
+                s = s[stride:] + s[:stride]
+            else:
+                s = s[-stride:] +s[:-stride]
+        return s
+
+        
 
